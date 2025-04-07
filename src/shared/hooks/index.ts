@@ -1,1 +1,1 @@
-export {useBackgroundLoader} from './use-backgrounds-loader';
+export {useBackgroundsLoader} from './use-backgrounds-loader';

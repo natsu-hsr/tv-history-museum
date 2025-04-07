@@ -3,4 +3,9 @@
   width: 100%;
   height: 100vh; /* Или другая высота, в зависимости от твоих нужд */
   overflow: hidden;
+  background-color: #000;
+
+  & > div {
+    will-change: transform, filter, opacity, scale; /* Оптимизация производительности */
+  }
 }

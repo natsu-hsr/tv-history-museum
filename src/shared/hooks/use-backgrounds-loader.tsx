@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {TvModels} from "../constants";
 
-export const useBackgroundLoader = () => {
+export const useBackgroundsLoader = () => {
   const [loadedImages, setLoadedImages] = useState<TvModels[]>([]);
 
   useEffect( () => {

@@ -8,7 +8,7 @@ import {BackgroundSlider} from '../../components/background-slider/background-sl
 import {normalizeLoaderValueArgs} from '../../shared/utils';
 import {TvModels} from '../../shared/constants';
 import {TTvModelKey} from '../../shared/types';
-import {useBackgroundLoader} from '../../shared/hooks';
+import {useBackgroundsLoader} from '../../shared/hooks';
 
 import s from './main.module.scss';
 
@@ -18,7 +18,7 @@ export const Main = () => {
   const {
     isLoading,
     loadedCount,
-  } = useBackgroundLoader();
+  } = useBackgroundsLoader();
   console.log('isLoading=', isLoading);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
