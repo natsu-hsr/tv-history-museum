@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 import {TvModels} from "../constants";
+import {TTvModelKey} from "../types";
 
 export const useBackgroundsLoader = () => {
-  const [loadedImages, setLoadedImages] = useState<TvModels[]>([]);
+  const [loadedImages, setLoadedImages] = useState<TTvModelKey[]>([]);
 
   useEffect( () => {
-    const preloadImage = (model: TvModels) => {
+    const preloadImage = (model: TTvModelKey) => {
       const img = new Image();
       img.src = `/assets/${model}/background.png`;
       img.onload = () => {
@@ -23,13 +24,14 @@ export const useBackgroundsLoader = () => {
       };
     };
   
-    (Object.keys(TvModels) as TvModels[]).forEach(m => preloadImage(m));
+    (Object.keys(TvModels) as TTvModelKey[]).forEach(m => preloadImage(m));
   }, []);
       
   const isLoading = loadedImages.length !== Object.values(TvModels).length;
 
   return {
     isLoading,
+    loadedImages,
     loadedCount: loadedImages.length,
   };
 };
